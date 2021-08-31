@@ -19,6 +19,7 @@
 		A94F19EF26DDB9EC00F47FAB /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94F19EE26DDB9EC00F47FAB /* SearchResults.swift */; };
 		A94F19F326DDCDD800F47FAB /* SearchPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94F19F226DDCDD800F47FAB /* SearchPlaceholderView.swift */; };
 		A94F19F726DDECC200F47FAB /* UIAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94F19F626DDECC200F47FAB /* UIAnimatable.swift */; };
+		A94F19FB26DE026500F47FAB /* TimeSeriesMonthlyAdjusted.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94F19FA26DE026500F47FAB /* TimeSeriesMonthlyAdjusted.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		A94F19EE26DDB9EC00F47FAB /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
 		A94F19F226DDCDD800F47FAB /* SearchPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceholderView.swift; sourceTree = "<group>"; };
 		A94F19F626DDECC200F47FAB /* UIAnimatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAnimatable.swift; sourceTree = "<group>"; };
+		A94F19FA26DE026500F47FAB /* TimeSeriesMonthlyAdjusted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSeriesMonthlyAdjusted.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				A94F19EE26DDB9EC00F47FAB /* SearchResults.swift */,
+				A94F19FA26DE026500F47FAB /* TimeSeriesMonthlyAdjusted.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				A94F19EA26DDB72300F47FAB /* APIService.swift in Sources */,
 				A94F19E526DDB51700F47FAB /* SearchTableViewCell.swift in Sources */,
 				A94F19C826DDA81800F47FAB /* AppDelegate.swift in Sources */,
+				A94F19FB26DE026500F47FAB /* TimeSeriesMonthlyAdjusted.swift in Sources */,
 				A94F19EF26DDB9EC00F47FAB /* SearchResults.swift in Sources */,
 				A94F19CA26DDA81800F47FAB /* SceneDelegate.swift in Sources */,
 				A94F19F326DDCDD800F47FAB /* SearchPlaceholderView.swift in Sources */,
