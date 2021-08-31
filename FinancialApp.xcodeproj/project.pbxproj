@@ -17,6 +17,8 @@
 		A94F19E526DDB51700F47FAB /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94F19E426DDB51700F47FAB /* SearchTableViewCell.swift */; };
 		A94F19EA26DDB72300F47FAB /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94F19E926DDB72300F47FAB /* APIService.swift */; };
 		A94F19EF26DDB9EC00F47FAB /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94F19EE26DDB9EC00F47FAB /* SearchResults.swift */; };
+		A94F19F326DDCDD800F47FAB /* SearchPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94F19F226DDCDD800F47FAB /* SearchPlaceholderView.swift */; };
+		A94F19F726DDECC200F47FAB /* UIAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94F19F626DDECC200F47FAB /* UIAnimatable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		A94F19E426DDB51700F47FAB /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		A94F19E926DDB72300F47FAB /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		A94F19EE26DDB9EC00F47FAB /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
+		A94F19F226DDCDD800F47FAB /* SearchPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceholderView.swift; sourceTree = "<group>"; };
+		A94F19F626DDECC200F47FAB /* UIAnimatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAnimatable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 		A94F19C626DDA81800F47FAB /* FinancialApp */ = {
 			isa = PBXGroup;
 			children = (
+				A94F19F526DDECB100F47FAB /* Protocol */,
 				A94F19ED26DDB9DE00F47FAB /* Model */,
 				A94F19E826DDB71400F47FAB /* Service */,
 				A94F19E326DDB50600F47FAB /* Controller */,
@@ -95,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				A94F19E426DDB51700F47FAB /* SearchTableViewCell.swift */,
+				A94F19F226DDCDD800F47FAB /* SearchPlaceholderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -121,6 +127,14 @@
 				A94F19EE26DDB9EC00F47FAB /* SearchResults.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		A94F19F526DDECB100F47FAB /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				A94F19F626DDECC200F47FAB /* UIAnimatable.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		FFD90D66CC534A3FD0E05D61 /* Pods */ = {
@@ -247,11 +261,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A94F19CC26DDA81800F47FAB /* SearchTableViewController.swift in Sources */,
+				A94F19F726DDECC200F47FAB /* UIAnimatable.swift in Sources */,
 				A94F19EA26DDB72300F47FAB /* APIService.swift in Sources */,
 				A94F19E526DDB51700F47FAB /* SearchTableViewCell.swift in Sources */,
 				A94F19C826DDA81800F47FAB /* AppDelegate.swift in Sources */,
 				A94F19EF26DDB9EC00F47FAB /* SearchResults.swift in Sources */,
 				A94F19CA26DDA81800F47FAB /* SceneDelegate.swift in Sources */,
+				A94F19F326DDCDD800F47FAB /* SearchPlaceholderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
