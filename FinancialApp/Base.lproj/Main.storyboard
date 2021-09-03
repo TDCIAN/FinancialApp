@@ -449,7 +449,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="dateLabel" destination="hFP-Zv-4MS" id="ccJ-fh-cdn"/>
+                                    <outlet property="monthLabel" destination="hFP-Zv-4MS" id="ccJ-fh-cdn"/>
                                     <outlet property="monthsAgoLabel" destination="56h-dL-Hd6" id="uAG-8U-LX3"/>
                                 </connections>
                             </tableViewCell>
