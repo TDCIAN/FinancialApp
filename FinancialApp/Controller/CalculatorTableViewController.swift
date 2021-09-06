@@ -22,6 +22,8 @@ class CalculatorTableViewController: UITableViewController {
     var asset: Asset?
     
     @Published private var initialDateOfInvestmentIndex: Int?
+    @Published private var initialInvestmentAmount: Int?
+    @Published private var monthlyDollarCostAveragingAmount: Int?
     
     private var subscribers = Set<AnyCancellable>()
     
@@ -65,6 +67,37 @@ class CalculatorTableViewController: UITableViewController {
             }
         }
         .store(in: &subscribers)
+        
+//        NotificationCenter.default.publisher(for: UITextField.textDidChangeNotification, object: initialInvestmentAmountTextField).compactMap({ ($0.object as? UITextField)?.text }).sink { (text) in
+//            print("initialInvestmentAmountTextField: \(text)")
+//        }.store(in: &subscribers)
+        
+        // 위와 같은 코드
+        NotificationCenter.default.publisher(for: UITextField.textDidChangeNotification, object: initialInvestmentAmountTextField).compactMap { notification -> String? in
+            var text: String?
+            if let textField = notification.object as? UITextField {
+                text = textField.text
+            }
+            return text
+        }.sink { [weak self] (text) in
+            self?.initialInvestmentAmount = Int(text) ?? 0
+        }.store(in: &subscribers)
+        
+        NotificationCenter.default.publisher(for: UITextField.textDidChangeNotification, object: monthlyDollarCostAveragingTextField).compactMap { notification -> String? in
+            var text: String?
+            if let textField = notification.object as? UITextField {
+                text = textField.text
+            }
+            return text
+        }.sink { [weak self] (text) in
+            print("monthlyDollarCostAveragingTextField: \(text)")
+            self?.monthlyDollarCostAveragingAmount = Int(text) ?? 0
+        }.store(in: &subscribers)
+        
+        Publishers.CombineLatest3($initialInvestmentAmount, $monthlyDollarCostAveragingAmount, $initialDateOfInvestmentIndex).sink { (initialInvestmentAmount, monthlyDollarCostAveragingAmount, initialDateOfInvestmentIndex) in
+            print("(1) initialInvestmentAmount: \(initialInvestmentAmount), (2) monthlyDollarCostAveragingAmount: \(monthlyDollarCostAveragingAmount), (3) initialDateOfInvestmentIndex: \(initialDateOfInvestmentIndex)")
+        }.store(in: &subscribers)
+
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
