@@ -105,14 +105,17 @@ class CalculatorTableViewController: UITableViewController {
             print("(1) initialInvestmentAmount: \(initialInvestmentAmount), (2) monthlyDollarCostAveragingAmount: \(monthlyDollarCostAveragingAmount), (3) initialDateOfInvestmentIndex: \(initialDateOfInvestmentIndex)")
             guard let initialInvestmentAmount = initialInvestmentAmount,
                   let monthlyDollarCostAveragingAmount = monthlyDollarCostAveragingAmount,
-                  let initialDateOfInvestmentIndex = initialDateOfInvestmentIndex else { return }
+                  let initialDateOfInvestmentIndex = initialDateOfInvestmentIndex,
+                  let asset = self?.asset else { return }
             
             let result = self?.dcaService.calculate(
+                asset: asset,
                 initialInvestmentAmount: initialInvestmentAmount.doubleValue,
                 monthlyDollorCostAverageAmount: monthlyDollarCostAveragingAmount.doubleValue,
                 initialDateOfInvestmentIndex: initialDateOfInvestmentIndex)
             
-            self?.currentValueLabel.text = result?.currentValue.stringValue
+            self?.currentValueLabel.backgroundColor = (result?.isProfitable == true) ? UIColor.themeGreenShade : UIColor.themeRedShade
+            self?.currentValueLabel.text = result?.currentValue.twoDecimalPlaceString
             self?.investmentAmountLabel.text = result?.investmentAmount.stringValue
             self?.gainLabel.text = result?.gain.stringValue
             self?.yieldLabel.text = result?.yield.stringValue
