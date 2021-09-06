@@ -10,14 +10,14 @@ import UIKit
 class SearchPlaceholderView: UIView {
     private let imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "imDca")
+        imageView.image = UIImage(named: "imLaunch")
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Search for companies to calculate potential returns via dollar cost averaging."
+        label.text = "Search for companies to calculate potential returns via dollar cost averaging"
         label.font = UIFont(name: "AvenirNext-Medium", size: 14)!
         label.numberOfLines = 0
         label.textAlignment = .center
@@ -47,7 +47,7 @@ class SearchPlaceholderView: UIView {
             stackView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.8),
             stackView.centerYAnchor.constraint(equalTo: centerYAnchor),
             stackView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            imageView.heightAnchor.constraint(equalToConstant: 88)
+            imageView.heightAnchor.constraint(equalToConstant: 160)
         ])
     }
 }

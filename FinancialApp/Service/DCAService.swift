@@ -25,11 +25,32 @@ struct DCAService {
         
         let isProfitable = currentValue > investmentAmount
         
+        let gain = currentValue - investmentAmount
+        
+        /*
+         example
+         investmentAmount: $10,000
+         (1)
+         currentValue: $12,000
+         gain = +$2000
+         yield = $2000 / $10,000 = 20%
+         (2)
+         currentValue: $7,000
+         gain: -$3,000
+         yield: -$3,000 / $10,000 = -30%
+         */
+        
+        let yield = gain / investmentAmount
+        
+        let annualReturn = getAnnualReturn(currentValue: currentValue,
+                                           investmentAmount: investmentAmount,
+                                           initialDateOfInvestmentIndex: initialDateOfInvestmentIndex)
+        
         return .init(currentValue: currentValue,
                      investmentAmount: investmentAmount,
-                     gain: 0,
-                     yield: 0,
-                     annualReturn: 0,
+                     gain: gain,
+                     yield: yield,
+                     annualReturn: annualReturn,
                      isProfitable: isProfitable)
         
         // currentValue = numberOfShares (initial + DCA) * latest share price
@@ -43,6 +64,13 @@ struct DCAService {
         let dollarCostAveragingAmounts = initialDateOfInvestmentIndex.doubleValue * monthlyDollorCostAverageAmount
         totalAmount += dollarCostAveragingAmounts
         return totalAmount
+    }
+    
+    private func getAnnualReturn(currentValue: Double, investmentAmount: Double, initialDateOfInvestmentIndex: Int) -> Double {
+        let rate = currentValue / investmentAmount
+        let years = (initialDateOfInvestmentIndex.doubleValue + 1) / 12
+        let result = pow(rate, (1 / years)) - 1
+        return result
     }
     
     private func getCurrentValue(numberOfShares: Double, latestSharePrice: Double) -> Double {
