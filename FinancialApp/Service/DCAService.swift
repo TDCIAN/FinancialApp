@@ -56,7 +56,7 @@ struct DCAService {
         // currentValue = numberOfShares (initial + DCA) * latest share price
     }
     
-    private func getInvestmentAmount(initialInvestmentAmount: Double,
+    func getInvestmentAmount(initialInvestmentAmount: Double,
                                      monthlyDollorCostAverageAmount: Double,
                                      initialDateOfInvestmentIndex: Int) -> Double {
         var totalAmount = Double()
