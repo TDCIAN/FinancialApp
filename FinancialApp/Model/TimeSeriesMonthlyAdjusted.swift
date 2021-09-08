@@ -26,20 +26,34 @@ struct TimeSeriesMonthlyAdjusted: Decodable {
         var monthInfos: [MonthInfo] = []
         
         let sortedTimeSeries = timeSeries.sorted(by: { $0.key > $1.key })
-        sortedTimeSeries.forEach { (dateString, ohlc) in
+        
+        for (dateString, ohlc) in sortedTimeSeries {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd"
-            let date = dateFormatter.date(from: dateString)!
-            let adjustedOpen = getAdjustedOpen(ohlc: ohlc)
-            let monthInfo = MonthInfo(date: date, adjustedOpen: adjustedOpen, adjustedClose: Double(ohlc.close)!)
+            guard let date = dateFormatter.date(from: dateString) else { return [] }
+            guard let adjustedOpen = getAdjustedOpen(ohlc: ohlc) else { return [] }
+            guard let adjustedClose = ohlc.adjustedClose.toDouble() else { return [] }
+            let monthInfo = MonthInfo(date: date, adjustedOpen: adjustedOpen, adjustedClose: adjustedClose)
             monthInfos.append(monthInfo)
         }
+        
+//        sortedTimeSeries.forEach { (dateString, ohlc) in
+//            let dateFormatter = DateFormatter()
+//            dateFormatter.dateFormat = "yyyy-MM-dd"
+//            let date = dateFormatter.date(from: dateString)!
+//            let adjustedOpen = getAdjustedOpen(ohlc: ohlc)
+//            let monthInfo = MonthInfo(date: date, adjustedOpen: adjustedOpen, adjustedClose: Double(ohlc.close)!)
+//            monthInfos.append(monthInfo)
+//        }
         return monthInfos
     }
     
-    private func getAdjustedOpen(ohlc: OHLC) -> Double {
+    private func getAdjustedOpen(ohlc: OHLC) -> Double? {
         // adjusted open = open * (adjusted close / close)
-        return Double(ohlc.open)! * (Double(ohlc.adjustedClose)! / Double(ohlc.close)!)
+        guard let open = ohlc.open.toDouble(),
+              let adjustedClose = ohlc.adjustedClose.toDouble(),
+              let close = ohlc.close.toDouble() else { return nil }
+        return open * adjustedClose / close
     }
 }
 

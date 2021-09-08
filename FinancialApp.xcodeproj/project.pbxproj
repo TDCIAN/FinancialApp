@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		87CAA633487CAC5FFDFB6A50 /* Pods_FinancialApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA71804A8EAA3017FD84868 /* Pods_FinancialApp.framework */; };
+		A904E75F26E7325800278098 /* CalculatorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A904E75E26E7325800278098 /* CalculatorPresenter.swift */; };
+		A904E76326E73EBF00278098 /* CalculatorPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A904E76226E73EBF00278098 /* CalculatorPresenterTests.swift */; };
 		A94F19C826DDA81800F47FAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94F19C726DDA81800F47FAB /* AppDelegate.swift */; };
 		A94F19CA26DDA81800F47FAB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94F19C926DDA81800F47FAB /* SceneDelegate.swift */; };
 		A94F19CC26DDA81800F47FAB /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94F19CB26DDA81800F47FAB /* SearchTableViewController.swift */; };
@@ -47,6 +49,8 @@
 		1DA71804A8EAA3017FD84868 /* Pods_FinancialApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinancialApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83892595E627F5F68521B93A /* Pods-FinancialApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinancialApp.debug.xcconfig"; path = "Target Support Files/Pods-FinancialApp/Pods-FinancialApp.debug.xcconfig"; sourceTree = "<group>"; };
 		923BFC935A25112BC6493CA2 /* Pods-FinancialApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinancialApp.release.xcconfig"; path = "Target Support Files/Pods-FinancialApp/Pods-FinancialApp.release.xcconfig"; sourceTree = "<group>"; };
+		A904E75E26E7325800278098 /* CalculatorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorPresenter.swift; sourceTree = "<group>"; };
+		A904E76226E73EBF00278098 /* CalculatorPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorPresenterTests.swift; sourceTree = "<group>"; };
 		A94F19C426DDA81800F47FAB /* FinancialApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinancialApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A94F19C726DDA81800F47FAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A94F19C926DDA81800F47FAB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -166,6 +170,7 @@
 			children = (
 				A94F19E926DDB72300F47FAB /* APIService.swift */,
 				A957C5AE26E5A8070072D209 /* DCAService.swift */,
+				A904E75E26E7325800278098 /* CalculatorPresenter.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -193,6 +198,7 @@
 			children = (
 				A957C5BD26E5EFB90072D209 /* FinancialAppTests.swift */,
 				A957C5BF26E5EFB90072D209 /* Info.plist */,
+				A904E76226E73EBF00278098 /* CalculatorPresenterTests.swift */,
 			);
 			path = FinancialAppTests;
 			sourceTree = "<group>";
@@ -369,6 +375,7 @@
 				A94F19F726DDECC200F47FAB /* UIAnimatable.swift in Sources */,
 				A94F19EA26DDB72300F47FAB /* APIService.swift in Sources */,
 				A953F39126E1B245005C529A /* Int+Extensions.swift in Sources */,
+				A904E75F26E7325800278098 /* CalculatorPresenter.swift in Sources */,
 				A95CC05626E092CA000B003B /* Asset.swift in Sources */,
 				A95CC05A26E098A9000B003B /* String+Extension.swift in Sources */,
 				A95CC05326E090F9000B003B /* CalculatorTableViewController.swift in Sources */,
@@ -389,6 +396,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A904E76326E73EBF00278098 /* CalculatorPresenterTests.swift in Sources */,
 				A957C5BE26E5EFB90072D209 /* FinancialAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
